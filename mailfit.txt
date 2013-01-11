@@ -1,0 +1,93 @@
+NAME
+    mailfit.pl
+
+VERSION
+    Documentation for mailfit.pl version 0.1 experimental
+
+SYNOPSIS
+    mailfit.pl
+    [--modeltest][--email][--sendto=*user@domain*][--help][--version][--man]
+    FILE
+
+DESCRIPTION
+    Runs PAUP* and MrModeltest2 (or Modeltest) on FILE, and then
+    (optionally) sends the result via e-mail.
+
+    FILE should be DNA sequences in Nexus format.
+
+    The results from MrModeltest2 or Modeltest are written to a file named
+    FILE.mfit.out, and a log file is written to FILE.mfit.log.
+
+OPTIONS
+    Mandatory arguments to long options are mandatory for short options too
+
+    -mo, --modeltest
+            Use Modeltest and not MrModeltest2 (MrModeltest2 is the
+            default). Basically tests 56 models instead of 24.
+
+    -e, --email
+            Send the result via e-mail to the users standard UNIX account.
+
+    -s, --sendto=*name@domain*
+            Send the result via e-mail to *name@domain*.
+
+    -h, --help
+            Prints help message and exits.
+
+    -v, --version
+            Prints version message and exits.
+
+    -ma, --man
+            Displays the manual page.
+
+USAGE
+    Run Modeltest (and not MrModeltest2) and send the results to my UNIX
+    e-mail account:
+
+    mailfit.pl --modeltest --email FILE
+    mailfit.pl -mo -e FILE
+
+    Run MrModeltest2 (and not Modeltest) and send the result to *bob@home*:
+
+    mailfit.pl --sendto=*bob@home* FILE
+    mailfit.pl -s=*bob@home* FILE
+
+    To run MrModeltest2 on FILE locally, without sending any e-mails:
+
+    mailfit.pl FILE
+
+AUTHOR
+    Written by Johan A. A. Nylander
+
+REPORTING BUGS
+    Please report any bugs to *nylander @ scs.fsu.edu*.
+
+DEPENDENCIES
+    PAUP*
+    MrModeltest2 or Modeltest
+    mutt or mail
+
+    Minimally, PAUP* and MrModeltest2 and/or Modeltest needs to be installed
+    (*and named* paup, mrmodeltest2, modeltest). In order for results to be
+    send via e-mail, the user must have a e-mail account on the server where
+    the job is launched. Mailfit.pl tries to use mutt, then mail as mail
+    clients. No e-mails are send if none of these programs are found on the
+    server.
+
+    Note that the success of the e-mail functionality is heavily dependent
+    on how the system is configured, and mailfit.pl does not do extensive
+    error checking!
+
+LICENSE AND COPYRIGHT
+    Copyright (c) 2005, 2006 Johan Nylander. All rights reserved.
+
+    This program is free software; you can redistribute it and/or modify it
+    under the terms of the GNU General Public License as published by the
+    Free Software Foundation; either version 2 of the License, or (at your
+    option) any later version.
+
+    This program is distributed in the hope that it will be useful, but
+    WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+    Public License for more details. http://www.gnu.org/copyleft/gpl.html
+
