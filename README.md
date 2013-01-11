@@ -1,7 +1,9 @@
 Mailfit
 =======
 
-Perl script that runs PAUP and MrModeltest2 (or Modeltest) and sends (optionally) results via e-mail.README mailfit.pl v.0.2
+Perl script that runs PAUP and MrModeltest2 (or Modeltest) and sends (optionally) results via e-mail.
+
+README mailfit.pl v.0.2
 
 06/23/2006 03:24:10
 
